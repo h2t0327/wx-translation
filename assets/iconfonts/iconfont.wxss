@@ -1,0 +1,34 @@
+
+@font-face {
+  font-family:"iconfont";
+  src: url('https://at.alicdn.com/t/font_954534_gwjwoifddfe.ttf?t=1544548104245') format('truetype');
+  /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cidian:before { content:"\e62e"; }
+
+.icon-fanyi:before { content:"\e608"; }
+
+.icon-daosanjiao:before { content:"\e615"; }
+
+.icon-zhuanhuan:before { content:"\e82b"; }
+
+.icon-duigou:before { content: "\e600"; }
+
+.icon-chacha:before { content: "\e667"; }
+
+.icon-laba:before { content: "\e609"; }
+
+.icon-fuzhi:before { content: "\e704"; }
+
+.icon-bofangzhong:before { content: "\e70e"; }
+
+.icon-lishi:before { content: "\e618"; }

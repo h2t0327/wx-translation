@@ -1,0 +1,13 @@
+/**app.wxss**/
+@import "assets/iconfonts/iconfont.wxss";
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #333;
+  background-color: #F0F2F5;
+} 

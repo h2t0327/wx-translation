@@ -1,0 +1,18 @@
+@import "../../assets/iconfonts/iconfont.wxss";
+
+.nav{
+  height: 50rpx;
+  display: flex;
+  padding: 12rpx 0 8rpx;
+  background-color: #F6F8F9;
+  border-bottom:1rpx solid #f6f6f6;
+}
+
+.nav-item{
+  flex: 1;
+  text-align: center;
+}
+
+.nav .text{
+  color: #31CFAB;
+}

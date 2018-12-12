@@ -1,0 +1,92 @@
+/**index.wxss**/
+.index .input{
+  padding: 20rpx 40rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input input,
+.display .history-left{
+  flex: 8;
+}
+
+.input text,
+.display .history-right{
+  color: #31CFAB;
+  text-align: right;
+  flex: 2;
+}
+
+.display .card{
+  background-color: #31CFAB;
+  color: #fff;
+  margin: 20rpx;
+  padding: 24rpx;
+  border-radius: 10rpx;
+}
+
+.display .result-text{
+  margin-bottom: 20rpx;
+}
+
+.display .result-icon,
+.display .detailed-phonogram,
+.display .tense-content,
+.history-content,
+.history-left{
+  display: flex;
+  justify-content: space-between;
+  color: #333;
+}
+
+.display .detailed-title,
+.display .tense-title,
+.display .web-title{
+  font-size: 16px;
+  color: #6b6b6b;
+  margin-bottom: 20rpx;
+}
+
+.display .tense-title{
+  padding-top: 20rpx;
+  border-top: 1px solid #f6f6f6;
+}
+
+.display .explains,
+.display .tense-content,
+.web-content,
+.history-content{
+  padding: 10rpx 0;
+}
+
+.history-content{
+  background-color: #fff;
+  color: #333;
+  padding: 20rpx 16rpx;
+  border-top: 1px solid #f6f6f6;
+}
+
+.display .detailed-button,
+.display .clear-button{
+  color: #31CFAB;
+  padding: 16rpx 0 0;
+  text-align: center;
+  background-color: #fff;
+  border-top: 1px solid #f6f6f6;
+}
+
+.display .clear-button{
+  padding: 16rpx 0;
+}
+
+.display .history{
+  margin: 20rpx;
+  border-radius: 10rpx;
+}
+
+.display .margin-80{margin: 60rpx}
+.display .margin-40{margin: 40rpx}
+.display .margin-20{margin: 20rpx}
+.display .margin-right-16{margin-right: 16rpx}
+.display .bgc-fff{background-color: #fff;color: #333;}

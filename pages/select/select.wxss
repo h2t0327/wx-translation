@@ -1,0 +1,11 @@
+.select .item{
+  padding: 30rpx;
+  border: 1rpx solid #f6f6f6;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.select .item.true{
+  color: #31CFAB;
+}

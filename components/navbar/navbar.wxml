@@ -1,0 +1,13 @@
+<view class="nav">
+  <view class="nav-item text" bindtap="onClick" data-type="start">
+    {{ detectionValue || languageArr[start].language }}
+    <text class="iconfont icon-daosanjiao"></text>
+  </view>
+  <view class="nav-item">
+    <text class="iconfont icon-zhuanhuan" ></text>
+  </view>
+  <view class="nav-item text" bindtap="onClick" data-type="end">
+    {{ languageArr[end].language }}
+    <text class="iconfont icon-daosanjiao"></text>
+  </view>
+</view>

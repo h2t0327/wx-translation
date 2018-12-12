@@ -1,0 +1,11 @@
+<!--logs.wxml-->
+<view class="container select">
+  <scroll-view>
+    <block wx:for="{{languageArr}}" wx:key="select{{index}}">
+      <view class="item {{ index == value }}" bindtap="onClick" data-index="{{ index }}">
+        <view>{{ item.language }}</view>
+        <view hidden="{{ index != value }}"><text class="iconfont icon-duigou"></text></view>
+      </view>
+    </block>
+  </scroll-view>
+</view>

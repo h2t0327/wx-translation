@@ -1,0 +1,84 @@
+<!--index.wxml-->
+<view class="container index">
+  <scroll-view>
+    <navbar start="{{start}}" end="{{end}}" detectionValue="{{detectionValue}}"></navbar>
+    <view class="input">
+      <input type="text" placeholder="请输入要查询的词语" bindinput='onInput' value="{{inputValue}}" bindblur='onConfirm'
+             auto-focus/>
+      <view hidden="{{inputValue.length === 0}}" bindtap="onCha">
+        <text class="iconfont icon-chacha"></text>
+      </view>
+      <view hidden="{{ !translator.query }}" bindtap="onRawPlay">
+        <text class="iconfont icon-laba" wx:if="{{rawPlayFlag}}"></text>
+        <text class="iconfont icon-bofangzhong" wx:else></text>
+      </view>
+    </view>
+    <view class="display">
+      <block wx:if="{{translator.query}}">
+        <view class="card margin-80">
+          <view class="result-text">{{translator.translation[0]}}</view>
+          <view class="result-icon">
+            <text class="iconfont icon-laba" wx:if="{{resultFlag}}" bindtap="onResult"></text>
+            <text class="iconfont icon-bofangzhong" wx:else></text>
+            <text class="iconfont icon-fuzhi" bindtap="onCopy"></text>
+          </view>
+        </view>
+        <view class="card margin-40 bgc-fff" hidden="{{!translator.basic}}">
+          <view class="detailed-title">详细释义</view>
+          <view class="detailed-phonogram" wx:if="{{ translator.basic['us-phonetic'] }}">
+            <view>
+              <text class="iconfont icon-laba" wx:if="{{americanFlag}}" bindtap="onAmerican"></text>
+              <text class="iconfont icon-bofangzhong" wx:else></text>
+              美：[ {{translator.basic['us-phonetic']}} ]
+            </view>
+            <view>
+              <text class="iconfont icon-laba" wx:if="{{britishFlag}}" bindtap="onBritish"></text>
+              <text class="iconfont icon-bofangzhong" wx:else></text>
+              英：[ {{translator.basic['us-phonetic']}} ]
+            </view>
+          </view>
+          <view>
+            <view class="explains" wx:for="{{translator.basic.explains}}" wx:key="exId{{index}}">{{item}}</view>
+          </view>
+          <block wx:if="{{ translator.basic.wfs }}">
+            <view hidden="{{ detailedSettingDown }}">
+              <view class="tense-title">时态</view>
+              <view class="tense-content" wx:for="{{translator.basic.wfs}}" wx:key="wfsID{{index}}">
+                <view>{{item.wf.name}}</view>
+                <view>{{item.wf.value}}</view>
+              </view>
+            </view>
+            <view class="detailed-button" bindtap="onSettingDown" wx:if="{{ detailedSettingDown }}">更多</view>
+            <view class="detailed-button" bindtap="onSettingDown" wx:else>收起</view>
+          </block>
+        </view>
+        <view class="card margin-20 bgc-fff" hidden="{{!translator.basic}}">
+          <view class="web-title">网络释义</view>
+          <block wx:for="{{translator.web}}" wx:key="webId{{index}}">
+            <view class="web-content">{{item.key}}</view>
+            <view class="web-content">
+              <block
+                  wx:for="{{item.value}}"
+                  wx:key="valueId{{index}}"
+                  wx:for-item="valueItem">{{valueItem}}；
+              </block>
+            </view>
+          </block>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="history">
+          <view class="history-content" wx:for="{{history}}" wx:key="hisID{{index}}">
+            <view class="history-left" bindtap="onHistory" data-index="{{index}}">
+              <view class="iconfont icon-lishi margin-right-16"></view>
+              <view class="margin-right-16">{{item.query}}</view>
+              <view class="margin-right-16">{{item.translation}}</view>
+            </view>
+            <view class="iconfont icon-chacha history-right" bindtap="onKillHistory" data-index="{{index}}"></view>
+          </view>
+          <view class="clear-button" hidden="{{ history.length === 0 }}" bindtap="onClearHistory">清空所有历史</view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>
