@@ -1,7 +1,6 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/translation/translation",
     "pages/select/select"
   ],
   "window":{
@@ -10,20 +9,5 @@
     "navigationBarTitleText": "石沐翻译",
     "navigationBarTextStyle":"#fff",
     "backgroundColor": "#F0F2F5"
-  },
-  "tabBar": {
-    "color": "#333",
-    "selectedColor": "#31CFAB",
-    "list": [{
-      "pagePath": "pages/index/index",
-      "iconPath": "assets/icon/cidian.png",
-      "selectedIconPath": "assets/icon/selectedcidian.png",
-      "text": "词典"
-    }, {
-      "pagePath": "pages/translation/translation",
-      "iconPath": "assets/icon/fanyi.png",
-      "selectedIconPath": "assets/icon/selectedfanyi.png",
-      "text": "翻译"
-    }]
   }
 }

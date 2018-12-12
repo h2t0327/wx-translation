@@ -14,6 +14,10 @@ Component({
     detectionValue: {
       type: 'string',
       value: ''
+    },
+    inputValue: {
+      type: 'string',
+      value: ''
     }
   },
   data: {
@@ -23,8 +27,9 @@ Component({
   methods: {
     // 这里是一个自定义方法
     onClick(e) {
+      const data = this.properties;
       wx.navigateTo({
-        url: `../../pages/select/select?type=${e.currentTarget.dataset.type}&start=${this.properties.start}&end=${this.properties.end}`
+        url: `../../pages/select/select?type=${e.currentTarget.dataset.type}&start=${data.start}&end=${data.end}&inputValue=${data.inputValue}`
       })
     }
   }

@@ -1,10 +1,10 @@
 <!--index.wxml-->
 <view class="container index">
   <scroll-view>
-    <navbar start="{{start}}" end="{{end}}" detectionValue="{{detectionValue}}"></navbar>
+    <navbar start="{{start}}" end="{{end}}" detectionValue="{{detectionValue}}" inputValue="{{inputValue}}"></navbar>
     <view class="input">
-      <input type="text" placeholder="请输入要查询的词语" bindinput='onInput' value="{{inputValue}}" bindblur='onConfirm'
-             auto-focus/>
+      <textarea cols="30" rows="10" type="text" placeholder="请输入要查询的词语" bindinput='onInput' value="{{inputValue}}" bindconfirm="onConfirm" bindblur='onConfirm'
+             auto-focus></textarea>
       <view hidden="{{inputValue.length === 0}}" bindtap="onCha">
         <text class="iconfont icon-chacha"></text>
       </view>
@@ -26,13 +26,13 @@
         <view class="card margin-40 bgc-fff" hidden="{{!translator.basic}}">
           <view class="detailed-title">详细释义</view>
           <view class="detailed-phonogram" wx:if="{{ translator.basic['us-phonetic'] }}">
-            <view>
-              <text class="iconfont icon-laba" wx:if="{{americanFlag}}" bindtap="onAmerican"></text>
+            <view bindtap="onAmerican">
+              <text class="iconfont icon-laba" wx:if="{{americanFlag}}"></text>
               <text class="iconfont icon-bofangzhong" wx:else></text>
               美：[ {{translator.basic['us-phonetic']}} ]
             </view>
-            <view>
-              <text class="iconfont icon-laba" wx:if="{{britishFlag}}" bindtap="onBritish"></text>
+            <view bindtap="onBritish">
+              <text class="iconfont icon-laba" wx:if="{{britishFlag}}"></text>
               <text class="iconfont icon-bofangzhong" wx:else></text>
               英：[ {{translator.basic['us-phonetic']}} ]
             </view>
@@ -81,4 +81,8 @@
       </block>
     </view>
   </scroll-view>
+  <view class="footer">
+    <view class="iconfont icon-fanyi icon"></view>
+    <view>© {{year}} 石沐翻译「LeonHuang」</view>
+  </view>
 </view>

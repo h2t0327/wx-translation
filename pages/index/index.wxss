@@ -8,14 +8,14 @@
 
 .input input,
 .display .history-left{
-  flex: 8;
+  flex: 9;
 }
 
 .input text,
 .display .history-right{
   color: #31CFAB;
   text-align: right;
-  flex: 2;
+  flex: 3;
 }
 
 .display .card{
@@ -83,6 +83,27 @@
 .display .history{
   margin: 20rpx;
   border-radius: 10rpx;
+}
+
+.index .footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  padding: 20rpx;
+  border-radius: 5px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f6f6;
+  color: #b4b4b4;
+}
+
+.footer .icon{
+  color: #31CFAB;
+  margin-bottom: 12rpx;
+  font-size: 32px;
 }
 
 .display .margin-80{margin: 60rpx}

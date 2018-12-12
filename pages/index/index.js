@@ -16,12 +16,14 @@ Page({
     americanFlag: true,
     britishFlag: true,
     detailedSettingDown: true,
-    history: []
+    history: [],
+    year: new Date().getFullYear()
   },
   onLoad (option) {
     this.setData({
       start: option.start || 0,
       end: option.end || 1,
+      inputValue: option.inputValue || '',
       history: wx.getStorageSync('history')||[]
     });
   },
@@ -49,8 +51,10 @@ Page({
       api.translate(data.inputValue, {from: data.languages[data.start].code, to: data.languages[data.end].code})
           .then(res => {
             this.setData({'translator': res});
-            if(data.start === 0){
-              this.setData({ detectionValue: '检测到' + util.codeToValue(res.l.slice(0,res.l.indexOf('2')))});
+            if(data.start == 0){
+              const detectionValue = util.codeToValue(res.l.slice(0,res.l.indexOf('2')));
+              this.setData({ detectionValue: '检测到' + detectionValue });
+              console.log(detectionValue,this.data.detectionValue);
             }
             let history = wx.getStorageSync('history')||[]
             history.unshift({ query: data.inputValue, translation: res.translation[0]})

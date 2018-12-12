@@ -12,7 +12,8 @@ Page({
       type: option.type,
       start: option.start,
       end: option.end,
-      value: option.type === 'start' ? option.start : option.end
+      value: option.type === 'start' ? option.start : option.end,
+      inputValue: option.inputValue
     });
   },
   onClick(e){
@@ -26,7 +27,7 @@ Page({
 
     setTimeout(() => {
       wx.reLaunch({
-        url: `../../pages/index/index?start=${this.data.start}&end=${this.data.end}`
+        url: `../../pages/index/index?start=${this.data.start}&end=${this.data.end}&inputValue=${this.data.inputValue}`
       })
     },100);
   }
