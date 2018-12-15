@@ -3,7 +3,7 @@
   <scroll-view>
     <navbar start="{{start}}" end="{{end}}" detectionValue="{{detectionValue}}" inputValue="{{inputValue}}"></navbar>
     <view class="input">
-      <textarea cols="30" rows="10" type="text" placeholder="请输入要查询的词语" bindinput='onInput' value="{{inputValue}}" bindconfirm="onConfirm" bindblur='onConfirm'
+      <textarea cols="30" rows="10" type="text" placeholder="请输入要查询的词语" bindinput='onInput' value="{{inputValue}}" bindblur='onConfirm'
              auto-focus></textarea>
       <view hidden="{{inputValue.length === 0}}" bindtap="onCha">
         <text class="iconfont icon-chacha"></text>

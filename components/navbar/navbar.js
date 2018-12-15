@@ -31,6 +31,17 @@ Component({
       wx.navigateTo({
         url: `../../pages/select/select?type=${e.currentTarget.dataset.type}&start=${data.start}&end=${data.end}&inputValue=${data.inputValue}`
       })
+    },
+    onSwitch(){
+      const data = this.properties;
+      let temp;
+      if(data.start != 0){
+        temp = data.start;
+        this.setData({
+          start: data.end,
+          end: temp
+        });
+      }
     }
   }
 })
